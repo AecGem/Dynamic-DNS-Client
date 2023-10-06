@@ -6,7 +6,7 @@ The script runs on Python 3.5+, with the following packages:
 `requests` - You may have to run `pip install requests` to install this package. It handles 
 
 ## Setup
-No installation is required; you just have to change a few variables in the config section of the script. Set the following values (located in the `main()` function) as described:
+No installation is required; you just have to change a few variables in the config section of the script, and then run it. Set the following values (located in the `main()` function) as described:
 
   #### host
   The prefix of the domain you wish to update. For most use cases, the default value `@` works fine. Otherwise, you can specify a wildcard `*` or a specific prefix (`www`, `info`, `ww2`, etc.)
