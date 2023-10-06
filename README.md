@@ -8,14 +8,14 @@ The script runs on Python 3.5+, with the following packages:
 ## Setup
 No installation is required; you just have to change a few variables in the config section of the script. Set the following values (located in the `main()` function) as described:
 
-### host
-The prefix of the domain you wish to update. For most use cases, the default value `@` works fine. Otherwise, you can specify a wildcard `*` or a specific prefix (`www`, `info`, `ww2`, etc.)
+  #### host
+  The prefix of the domain you wish to update. For most use cases, the default value `@` works fine. Otherwise, you can specify a wildcard `*` or a specific prefix (`www`, `info`, `ww2`, etc.)
 
-### domain_name
-The domain you are updating, without any prefix. Ex: `google.ca`
+  #### domain_name
+  The domain you are updating, without any prefix. Ex: `google.ca`
 
-### ddns_password
-The password provided to you by your Dynamic DNS provider for your domain.
+  #### ddns_password
+  The password provided to you by your Dynamic DNS provider for your domain.
 
-### update_frequency
-The interval, in seconds, that will pass between updates. For example, setting this to 60 will send an update request once every minute (60 seconds.)
+  #### update_frequency
+  The interval, in seconds, that will pass between updates. For example, setting this to 60 will send an update request once every minute (60 seconds.)
