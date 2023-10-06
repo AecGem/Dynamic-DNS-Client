@@ -1,11 +1,15 @@
 # Dynamic-DNS-Client
-A simple script that sends an IP update request to a Dynamic DNS Registry at a regular interval.
+A lightweight script that sends an IP update request to a single Dynamic DNS Registry at a regular interval. Once every `x` seconds, the script will send an HTTP request to your Dynamic DNS Provider. If the request is successful, the Dynamic DNS will then point to the IP address the script originates from. A full XML readout of the HTTP request is shown after every update attempt. If the update is unsuccessful, a `WARN` will display in the shell.
+
+##Dependencies
+The script runs on Python 3.5+, with the following packages:
+`requests` - You may have to run `pip install requests` to install this package. It handles 
 
 ## Setup
- The script requires the Python requests package, so run `pip install requests` before running this script. In order to set up the Dynamic DNS client, you have to change a few variables in the script. 
+No installation is required; you just have to change a few variables in the config section of the script. Set the following values (located in the `main()` function) as described:
 
 ### host
-Basically change this to the prefix of the domain you wish to update. For most uses the default value `@` works fine. Otherwise you can specify a wildcard `*` or a specific prefix (`www`, `info`, `ww2`, etc.)
+The prefix of the domain you wish to update. For most use cases, the default value `@` works fine. Otherwise, you can specify a wildcard `*` or a specific prefix (`www`, `info`, `ww2`, etc.)
 
 ### domain_name
 The domain you are updating, without any prefix. Ex: `google.ca`
