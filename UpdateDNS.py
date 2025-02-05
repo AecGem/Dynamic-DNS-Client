@@ -35,14 +35,20 @@ def main():
 
     #The frequency (in seconds) between updates. Set to 0 or below to only update once.
     update_frequency = 60
+    startingTime = datetime.datetime.now()
     
     if update_frequency > 0:
+
+        requestCounter = 0
+
         currentTimeStamp = datetime.datetime.now().strftime('[%Y-%m-%d %H:%M:%S]')
         print(f"{currentTimeStamp}: Starting Dynamic DNS update script with interval {update_frequency} seconds between requests.")
         
         while True:
-            
+            print("Sending request " + str(requestCounter))
+            print("Script has been running for " + str(datetime.datetime.now()-startingTime) + " seconds.")
             send_ddns_update_request(host, domain_name, ddns_password)
+            requestCounter = requestCounter + 1
             sleep(update_frequency)
     else:
         send_ddns_update_request(host, domain_name, ddns_password)
