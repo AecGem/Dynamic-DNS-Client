@@ -24,8 +24,8 @@ def main():
 
     #CONFIG VARIABLES
 
-    #The host prefix of the domain, ex: the www in www.google.ca
-    host = "@" 
+    #The host prefixes of the domain, ex: the www in www.google.ca, or the wildcard @.google.ca.
+    hostList = ["@"] 
     
     #The domain name in question.   ex: google.ca                                            
     domain_name = "website.com"     
@@ -47,11 +47,13 @@ def main():
         while True:
             print("Sending request " + str(requestCounter))
             print("Script has been running for " + str(datetime.datetime.now()-startingTime) + " seconds.")
-            send_ddns_update_request(host, domain_name, ddns_password)
+            for host in hostList:
+                send_ddns_update_request(host, domain_name, ddns_password)
             requestCounter = requestCounter + 1
             sleep(update_frequency)
     else:
-        send_ddns_update_request(host, domain_name, ddns_password)
+        for host in hostList:
+            send_ddns_update_request(host, domain_name, ddns_password)
         currentTimeStamp = datetime.datetime.now().strftime('[%Y-%m-%d %H:%M:%S]')
         print(f"{currentTimeStamp}: Update request complete. Check the response text to validate Dynamic DNS update.")
 
